@@ -11,6 +11,13 @@ clearInterval(timerInterval)	Detener el timer actual
 timerInterval = null	Marcar que ya no hay ningún timer activo
 */
 
+function updateDisplay(){
+    const minutes = Math.floor(timeLeft/60).toString().padStart(2,'0');
+    const seconds = (timeLeft%60).toString().padStart(2,'0');// redondea para abajo, saca el resto lo vuelve una cadena y le agrega cerros al comienzo si tiene menos de 2 caracteres
+    timerDisplat.textContent = `${minutes}:${seconds}`;
+    stateDisplay.textContent = isStudy ? "Study Time" : "Break time";
+}
+
 function startTimer(){
     if(!timerInvertal){ // si no hay temporizador corriendo //!timerInterval será true si timerInterval es null, undefined o 0.
         if(timeLeft<=0){ //Si el tiempo restante es 0 o menos, quiere decir que el temporizador está "vacío".
@@ -41,3 +48,11 @@ function resetTimer(){
     timeLeft = parseInt(inputStudy.value)*60;
     updateDisplay();
 }
+
+startButton.addEventListener('click', startTimer);
+pauseButton.addEventListener('click',pauseTimer);
+resetButton.addEventListener('click',resetTimer);
+
+//inicializa el display
+timeLeft=parseInt(inputStudy.value)*60;
+updateDisplay();
