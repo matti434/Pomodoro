@@ -13,29 +13,37 @@
 <body>
 
     <section class="container-fluid min-vh-100 d-flex justify-content-center align-items-center">
-        <div class="row text-center justify-content-center align-items-center">
-            <div class="col-12 mb-3">
-                <h1 class="display-1 text-white">Pomodoro Timer</h1>
+        <div class="row text-center pomodoro-container justify-content-center align-items-center">
+            <div class="col-12">
+                <h1 class="display-1 text-white"><span class="text-danger">Pomodoro</span> Timer</h1>
             </div>
-            <div class="row justify-content-center align-items-center mt-5">
+            <div class="row justify-content-center align-items-center mt-3">
                 <h1 class="text-white mb-5">Configuration</h1>
                 <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
-                    <h3 class="text-white d-flex align-items-center ">Study Time: </h3>
-                    <input type="text" class="form-control w-25" id="inputStudy" value="25">;
+                    <h3 class="text-white">Study Time: </h3>
+                    <input type="text" class="form-control input-study text-center" id="inputStudy" value="25">;
                 </div>
                 <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-start">
-                    <h3 class="text-white d-flex align-items-center">Break Time: </h3>
-                    <input type="text" class="form-control w-25" id="inputBreak" value="10">
+                    <h3 class="text-white">Break Time: </h3>
+                    <input type="text" class="form-control  input-break text-center" id="inputBreak" value="10">
                 </div>
             </div>
-            <div class="col-12 col-md-6 mt-5 d-flex justify-content-center justify-content-md-end">
+            <div class="state text-white" id="stateDisplay">Paused</div>
+            <div class="col-12">
+                <div id="timerDisplay" class="timerDisplay">25:00</div>
+            </div>
+            <div class="col-12 col-md-4 mt-5 d-flex justify-content-center justify-content-md-end">
                 <button class="card border-4 rounded-4 shadow p-4" id="startButton">Start</button>
             </div>
-            <div class="col-12 col-md-6 mt-5 d-flex justify-content-center justify-content-md-start">
+            <div class="col-12 col-md-4 mt-5 d-flex justify-content-center">
+                <button class="card border-4 rounded-4 shadow p-4" id="pauseButton">Pause</button>
+            </div>
+            <div class="col-12 col-md-4 mt-5 d-flex justify-content-center justify-content-md-start">
                 <button class="card border-4 rounded-4 shadow p-4" id="resetButton">Reset</button>
             </div>
         </div>
     </section>
+    <audio class="container-alarm text-white" id="alarmSound" src="" preload="auto">audio</audio>
 
 
 

@@ -17,13 +17,69 @@ body {
 }
 
 .pomodoro-container {
+  height: 60vh;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.10); /* Transparencia */
-  padding: 40px;
-  margin: 50px;
   border-radius: 15px;
   backdrop-filter: blur(5px); /* Efecto de vidrio esmerilado */
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.input-study, .input-break{
+  width: 25%;
+  height: 30px;
+  align-items: center;
+}
+
+.pomodoro-container {
+    background: rgba(0, 0, 0, 0.1); /* Fondo oscuro semitransparente */
+    padding: 3rem;
+    border-radius: 1.5rem;
+    backdrop-filter: blur(8px); /* efecto vidrio difuminado */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Inputs */
+.pomodoro-container .form-control {
+    width: 80px;
+    border: none;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    transition: 0.3s ease;
+    margin-left: 0.5rem;
+}
+
+
+/* Botones */
+.pomodoro-container button {
+    background: linear-gradient(135deg, #0000000a, #6b0404);
+    color: #fff;
+    border: none;
+    border-radius: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 0.8rem 2.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pomodoro-container button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(41, 24, 11, 0.4);
+}
+
+.pomodoro-container h3 {
+    margin-right: 0.5rem;
+}
+
+.container-alarm{
+  position: relative;
+  top: 0;
+  left: 0;
 }
